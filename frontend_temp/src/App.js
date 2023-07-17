@@ -25,10 +25,10 @@ class App extends Component {
     const formData = new FormData();
     formData.append('file', fileToBeSent);
     console.log(formData)
-    const response = await fetch('http://localhost:8001/upload-csv', {
+    const response = await fetch('http://localhost:8000/upload-csv', {
       method: 'POST',
       headers: {
-        'Access-Control-Allow-Origin': 'http://localhost:3004',  // Replace with specific origin if needed
+        'Access-Control-Allow-Origin': 'http://localhost:3000',  // Replace with specific origin if needed
       },
       body: formData,
     });
@@ -43,10 +43,10 @@ class App extends Component {
     const {isAnySent} = this.state 
     if (isAnySent){
       console.log("bringTheSavedData")
-    const response = await fetch('http://localhost:8001/saved-data', {
+    const response = await fetch('http://localhost:8000/saved-data', {
       method: 'GET',
       headers: {
-        'Access-Control-Allow-Origin': 'http://localhost:3004',  // Replace with specific origin if needed
+        'Access-Control-Allow-Origin': 'http://localhost:3000',  // Replace with specific origin if needed
       },
     });
     const DataRecieved = await response.json()
